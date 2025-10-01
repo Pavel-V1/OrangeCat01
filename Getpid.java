@@ -15,6 +15,7 @@ public class Getpid {
 
         System.out.println("pid=" + libc.getpid() + " parent pid=" + libc.getppid());
 
-        fuseOperations.getattr.set((path, stbuf) -> 0);
+        //FuseOperations fuseOperations = new FuseOperations(path, stbuf);
+        //fuseOperations.getattr.set((path, stbuf) -> 0);
     }
 }

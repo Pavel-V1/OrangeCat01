@@ -1,4 +1,5 @@
 import jnr.ffi.*;
+import jnr.ffi.annotations.Delegate;
 
 public interface GetAttrCallback {
     @Delegate

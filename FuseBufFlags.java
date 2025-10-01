@@ -1,4 +1,4 @@
-import jnr.ffi.*;
+import jnr.ffi.util.EnumMapper;
 
 public enum FuseBufFlags implements EnumMapper.IntegerEnum {
     FUSE_BUF_IS_FD(1 << 1),
