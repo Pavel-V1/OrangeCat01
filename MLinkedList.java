@@ -1,9 +1,11 @@
 class ListNode {
+    Object data;
     int value;
     ListNode next;
     ListNode prev;
 
     ListNode(int value) {
+        this.data = null;
         this.value = value;
         this.next = null;
         this.prev = null;
@@ -44,6 +46,14 @@ public class MLinkedList {
         }
     }
 
+    public void setData(ListNode node, Object dataAa) {
+        node.data = dataAa;
+    }
+
+    public Object getData(ListNode node) {
+        return node.data;
+    }
+
     public boolean remove(int value) {
         if (head == null) return false;
 
@@ -75,8 +85,35 @@ public class MLinkedList {
         return false;
     }
 
+    public ListNode get(int value) {
+        if (head == null) return null;
+
+        if (head.value == value) {
+            return head;
+        } else if (tail.value == value) {
+            return tail;
+        }
+
+        ListNode cur = head;
+        while (cur.next != null) {
+            if (cur.next.value == value) {
+                return cur.next;
+            }
+            cur = cur.next;
+        }
+        return null;
+    }
+
     public ListNode getHead() {
         return head;
+    }
+
+    public ListNode getNext(ListNode node) {
+        return node.next;
+    }
+
+    public ListNode getPrev(ListNode node) {
+        return node.prev;
     }
 
     public void printList() {
