@@ -1,11 +1,11 @@
+package FUSE;
+
 class ListNode {
-    Object data;
     int value;
     ListNode next;
     ListNode prev;
 
     ListNode(int value) {
-        this.data = null;
         this.value = value;
         this.next = null;
         this.prev = null;
@@ -44,14 +44,6 @@ public class MLinkedList {
             tail = tail.next;
             tail.prev = d; // добавил благодаря тестам
         }
-    }
-
-    public void setData(ListNode node, Object dataAa) {
-        node.data = dataAa;
-    }
-
-    public Object getData(ListNode node) {
-        return node.data;
     }
 
     public boolean remove(int value) {
@@ -108,30 +100,24 @@ public class MLinkedList {
         return head;
     }
 
-    public ListNode getNext(ListNode node) {
-        return node.next;
-    }
-
-    public ListNode getPrev(ListNode node) {
-        return node.prev;
-    }
-
     public void printList() {
         ListNode cur = head;
-        while (cur != null) {
+        while (cur.next != null) {
             System.out.print(cur.value + " ");
             cur = cur.next;
         }
+        System.out.print(cur.value);
         System.out.println();
     }
 
     public StringBuilder printList(int x) {
         StringBuilder str = new StringBuilder();
         ListNode cur = head;
-        while (cur != null) {
+        while (cur.next != null) {
             str.append(cur.value).append(" ");
             cur = cur.next;
         }
+        str.append(cur.value);
         return str;
     }
 
