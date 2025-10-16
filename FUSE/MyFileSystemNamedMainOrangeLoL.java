@@ -9,7 +9,7 @@ public class MyFileSystemNamedMainOrangeLoL {
 
     public byte readMOFile(String path) {
         // проход по файлу, считывание нужных кусков и возврат
-
+        nlist.add(new MLinkedList());
         return 0;
     }
 

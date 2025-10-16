@@ -1,18 +1,18 @@
 package FUSE;
 
 class NListNode {
-    ListNode node;
+    MLinkedList lnode;
     NListNode next;
     NListNode prev;
 
-    NListNode(ListNode node) {
-        this.node = node;
+    NListNode(MLinkedList lnode) {
+        this.lnode = lnode;
         this.next = null;
         this.prev = null;
     }
 
-    public ListNode getNode() {
-        return node;
+    public MLinkedList getNode() {
+        return lnode;
     }
 
     public NListNode getNext() {
@@ -33,8 +33,8 @@ public class NLinkedList {
         this.tail = null;
     }
 
-    public void add(ListNode node) {
-        NListNode newNode = new NListNode(node);
+    public void add(MLinkedList lnode) {
+        NListNode newNode = new NListNode(lnode);
         if (head == null) {
             head = newNode;
             tail = head;
@@ -46,16 +46,16 @@ public class NLinkedList {
         }
     }
 
-    public boolean remove(ListNode node) {
+    public boolean remove(MLinkedList lnode) {
         if (head == null) return false;
 
-        if (head.node == node) {
+        if (head.lnode == lnode) {
             head = head.next;
             if (head != null && head.prev != null) {
                 head.prev = null;
             }
             return true;
-        } else if (tail.node == node) {
+        } else if (tail.lnode == lnode) {
             tail = tail.prev;
             if (tail != null && tail.next != null) {
                 tail.next = null;
@@ -65,7 +65,7 @@ public class NLinkedList {
 
         NListNode cur = head;
         while (cur.next != null) {
-            if (cur.next.node == node) {
+            if (cur.next.lnode == lnode) {
                 NListNode d = cur.next.prev;
                 cur.next = cur.next.next;
                 cur.next.prev = d;
@@ -77,18 +77,18 @@ public class NLinkedList {
         return false;
     }
 
-    public NListNode get(ListNode node) {
+    public NListNode get(MLinkedList lnode) {
         if (head == null) return null;
 
-        if (head.node == node) {
+        if (head.lnode == lnode) {
             return head;
-        } else if (tail.node == node) {
+        } else if (tail.lnode == lnode) {
             return tail;
         }
 
         NListNode cur = head;
         while (cur.next != null) {
-            if (cur.next.node == node) {
+            if (cur.next.lnode == lnode) {
                 return cur.next;
             }
             cur = cur.next;
