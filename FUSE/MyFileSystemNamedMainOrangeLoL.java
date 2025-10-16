@@ -1,18 +1,24 @@
 package FUSE;
 
+import javax.xml.crypto.Data;
+
 public class MyFileSystemNamedMainOrangeLoL {
     // обращение к файлу
 
-    public int readMOFile() {
+
+    public byte readMOFile(String path) {
         // проход по файлу, считывание нужных кусков и возврат
+
         return 0;
     }
 
-    public void createMOFile() {
-        // запись данных в какие-то места файла
+    public void createMOFile(Data dt) {
+        // запись в какие-то места в файле
+
     }
 
     public void deleteMOFile() {
         // зануление каких-то кусков либо помечание их как свободные для записи
+
     }
 }

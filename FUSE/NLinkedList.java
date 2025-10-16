@@ -1,11 +1,11 @@
 package FUSE;
 
-class ListNode {
+class NListNode {
     int value;
-    ListNode next;
-    ListNode prev;
+    NListNode next;
+    NListNode prev;
 
-    ListNode(int value) {
+    NListNode(int value) {
         this.value = value;
         this.next = null;
         this.prev = null;
@@ -15,31 +15,31 @@ class ListNode {
         return value;
     }
 
-    public ListNode getNext() {
+    public NListNode getNext() {
         return next;
     }
 
-    public ListNode getPrev() {
+    public NListNode getPrev() {
         return prev;
     }
 }
 
-public class MLinkedList {
-    private ListNode head;
-    private ListNode tail;
+public class NLinkedList {
+    private NListNode head;
+    private NListNode tail;
 
-    public MLinkedList() {
+    public NLinkedList() {
         this.head = null;
         this.tail = null;
     }
 
     public void add(int value) {
-        ListNode newNode = new ListNode(value);
+        NListNode newNode = new NListNode(value);
         if (head == null) {
             head = newNode;
             tail = head;
         } else {
-            ListNode d = tail;
+            NListNode d = tail;
             tail.next = newNode;
             tail = tail.next;
             tail.prev = d;
@@ -63,10 +63,10 @@ public class MLinkedList {
             return true;
         }
 
-        ListNode cur = head;
+        NListNode cur = head;
         while (cur.next != null) {
             if (cur.next.value == value) {
-                ListNode d = cur.next.prev;
+                NListNode d = cur.next.prev;
                 cur.next = cur.next.next;
                 cur.next.prev = d;
                 return true;
@@ -77,7 +77,7 @@ public class MLinkedList {
         return false;
     }
 
-    public ListNode get(int value) {
+    public NListNode get(int value) {
         if (head == null) return null;
 
         if (head.value == value) {
@@ -86,7 +86,7 @@ public class MLinkedList {
             return tail;
         }
 
-        ListNode cur = head;
+        NListNode cur = head;
         while (cur.next != null) {
             if (cur.next.value == value) {
                 return cur.next;
@@ -96,47 +96,7 @@ public class MLinkedList {
         return null;
     }
 
-    public ListNode getHead() {
+    public NListNode getHead() {
         return head;
-    }
-
-    public void printList() {
-        ListNode cur = head;
-        while (cur.next != null) {
-            System.out.print(cur.value + " ");
-            cur = cur.next;
-        }
-        System.out.print(cur.value);
-        System.out.println();
-    }
-
-    public StringBuilder printList(int x) {
-        StringBuilder str = new StringBuilder();
-        ListNode cur = head;
-        while (cur.next != null) {
-            str.append(cur.value).append(" ");
-            cur = cur.next;
-        }
-        str.append(cur.value);
-        return str;
-    }
-
-    public int countMaxElements() {
-        if (head == null) return 0;
-
-        int maxValue = head.value;
-        int maxCount = 1;
-        ListNode cur = head.next;
-
-        while (cur != null) {
-            if (cur.value > maxValue) {
-                maxValue = cur.value;
-                maxCount = 1;
-            } else if (cur.value == maxValue) {
-                maxCount++;
-            }
-            cur = cur.next;
-        }
-        return maxCount;
     }
 }
