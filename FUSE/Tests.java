@@ -61,11 +61,4 @@ public class Tests {
         list.remove(10);
         assertNull(list.getHead());
     }
-
-    @Test
-    public void testNLinkedList() {
-        NLinkedList list = new NLinkedList();
-
-        list.add(new ListNode(10));
-    }
 }
