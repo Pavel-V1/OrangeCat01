@@ -1,9 +1,10 @@
 package FUSE;
 
 public class MOFileSystem {
-    private final int sizeOfCluster = 512;
+    private final int sizeOfCluster = 2^9;
     private byte getNode(int i) {
 
+        return 0;
     }
 
     public void createMOFile(String pathString) {
@@ -51,3 +52,5 @@ public class MOFileSystem {
         return path;
     }
 }
+// https://habr.com/ru/articles/260801/
+// https://github.com/SerCeMan/jnr-fuse/tree/master
