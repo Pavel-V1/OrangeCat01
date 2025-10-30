@@ -1,7 +1,5 @@
 package FUSE;
 
-import javax.xml.crypto.Data;
-
 public class MyFileSystemNamedMainOrangeLoL {
 
     public byte readMOFile(String path) {
@@ -9,11 +7,11 @@ public class MyFileSystemNamedMainOrangeLoL {
         return 0;
     }
 
-    public void createMOFile(Data dt) {
+    public void createMOFile(String path) {
 
     }
 
-    public boolean deleteMOFile() {
+    public boolean deleteMOFile(String path) {
 
         return false;
     }
