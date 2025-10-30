@@ -2,16 +2,25 @@ package FUSE;
 
 public class MyFileSystemNamedMainOrangeLoL {
 
+    public void createMOFile(String path) {
+
+    }
+
+    public void createMOFDirectory(String path) {
+
+    }
+
     public byte readMOFile(String path) {
 
         return 0;
     }
 
-    public void createMOFile(String path) {
+    public boolean deleteMOFile(String path) {
 
+        return false;
     }
 
-    public boolean deleteMOFile(String path) {
+    public boolean deleteMOFDirectory(String path) {
 
         return false;
     }
